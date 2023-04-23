@@ -10,7 +10,7 @@ int print_bin(va_list l)
 {
 	unsigned int n = va_arg(l, unsigned int);
 	char c;
-	int ctr = 0, i = 0, j = 0, retval;
+	int ctr = 0, i = 0, retval;
 	char *binary;
 	
 	while (n > 0)
@@ -28,7 +28,7 @@ int print_bin(va_list l)
 	}
 	else
 	{
-		if (string == NULL)
+		if (binary == NULL)
 			return (-1);
 		for (i = 1; i < ctr + 1; i++)
 		{
