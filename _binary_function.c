@@ -8,15 +8,17 @@
  */
 int print_bin(va_list l)
 {
-	unsigned int n = va_arg(l, unsigned int);
+	unsigned int n = va_arg(l, unsigned int), a;
 	char c;
 	int ctr = 0, i = 0, retval;
 	char *binary;
 	
-	while (n > 0)
+	n = a;
+	
+	while (a > 0)
 	{
 		ctr++;
-		n /= 2;
+		a /= 2;
 	}
 	
 	binary = malloc(sizeof(char) * (ctr + 1));
