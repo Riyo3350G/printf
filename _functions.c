@@ -9,7 +9,7 @@
 int print_c(va_list l)
 {
 	char c = va_arg(l, int);
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 	return (1);
 }
 
@@ -33,7 +33,7 @@ int print_s(va_list l)
 	for (i = str; *i != '\0'; i++)
 	{
 		ctr++;
-		write(1, i, 1);
+		write(STDOUT_FILENO, i, 1);
 	}
 	return (ctr);
 }
