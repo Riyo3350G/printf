@@ -19,15 +19,22 @@ int _printf(const char *format, ...)
 		if(format[i] == '%')
 		{
 			i++;
-			if(format[i] == 'c')
+			if(format[i])
 			{
-				counter += print_c(l);
-			}else if(format[i] == 's')
-			{
-				counter += print_s(l);
-			}else if(format[i] == 'd' || format[i] == 'i')
-			{
-				counter += print_i(l);
+				if(format[i] == 'c')
+				{
+					counter += print_c(l);
+				}else if(format[i] == 's')
+				{
+					counter += print_s(l);
+				}else if(format[i] == 'd' || format[i] == 'i')
+				{
+					counter += print_i(l);
+				}else if (format[i] == '%')
+				{
+					write(1,"%",1);
+					counter++;
+				}
 			}
 
 		}else {
