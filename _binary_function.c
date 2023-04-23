@@ -50,5 +50,5 @@ int print_bin(va_list l)
 		}
 	}
 	free(binary);
-	return ctr;
+	return (ctr);
 }
