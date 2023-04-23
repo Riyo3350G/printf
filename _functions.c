@@ -25,6 +25,11 @@ int print_s(va_list l)
 	char *i;
 	int ctr = 0;
 	
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+	
 	for (i = str; *i != '\0'; i++)
 	{
 		ctr++;
