@@ -37,6 +37,9 @@ int _printf(const char *format, ...)
 				{
 					write(1, "%", 1);
 					counter++;
+				}else if (format[i] == 'b')
+				{
+					counter += print_bin(l);
 				}
 			}
 		}
