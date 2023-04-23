@@ -8,29 +8,37 @@
  */
 int print_bin(va_list l)
 {
-	unsigned int n = va_arg(l, unsigned int);
-	char c;
-	int ctr = 0, i = 0, j = 0, binary[32];
+	unsigned int input = va_arg(l, unsigned int);
+	char binary_digit;
+	int num_digits = 0, index = 0;
+	int *binary_array = malloc(32 * sizeof(int));
 
-	if (n == 0)
+	if (binary_array == NULL)
+		return (-1); // handle allocation failure
+
+	if (input == 0)
 	{
-		c = n + '0';
-		write(1, &c, 1);
+		binary_digit = input + '0';
+		write(1, &binary_digit, 1);
+		num_digits++;
 	}
 	else
 	{
-		while (n > 0)
+		while (input > 0)
 		{
-			binary[i] = n % 2;
-			n = n / 2;
-			ctr++;
-			i++;
+			binary_array[index] = input & 1;
+			input >>= 1;
+			num_digits++;
+			index++;
 		}
-		for (j = i - 1; j >= 0; j--)
+
+		for (int j = index - 1; j >= 0; j--)
 		{
-			c = binary[j] + '0';
-			write(1, &c, 1);
+			binary_digit = binary_array[j] + '0';
+			write(1, &binary_digit, 1);
 		}
 	}
-	return ctr;
+
+	free(binary_array);
+	return num_digits;
 }
