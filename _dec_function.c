@@ -12,7 +12,7 @@ int print_i(va_list l)
     int ctr = 0, n;
     int input = va_arg(l, int);
     unsigned int countn = 1;
-    unsigned long number;
+    unsigned int number;
     char c;
 
     if (input < 0)
@@ -25,6 +25,8 @@ int print_i(va_list l)
     {
         number = (unsigned long) input;
     }
+
+    input = number;
 
     while (number >= 10)
     {
