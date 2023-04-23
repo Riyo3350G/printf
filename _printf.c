@@ -40,6 +40,10 @@ int _printf(const char *format, ...)
 				}else if (format[i] == 'b')
 				{
 					counter += print_bin(l);
+				}else{
+					write(1, &format[i-1], 1);
+					write(1, &format[i],1);
+					counter = counter + 2;
 				}
 			}
 		}
