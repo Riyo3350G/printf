@@ -10,7 +10,16 @@ int print_bin(va_list l)
 {
 	unsigned int n = va_arg(l, unsigned int);
 	char c;
-	int ctr = 0, i = 0, j = 0, binary[32];
+	int ctr = 0, i = 0, j = 0, retval;
+	char *binary;
+	
+	while (n > 0)
+	{
+		ctr++;
+		n /= 2;
+	}
+	
+	binary = malloc(sizeof(char) * (ctr + 1));
 
 	if (n < 1)
 	{
@@ -19,18 +28,25 @@ int print_bin(va_list l)
 	}
 	else
 	{
-		while (n > 0)
+		if (string == NULL)
+			return (-1);
+		for (i = 1; i < ctr + 1; i++)
 		{
-			binary[i] = n % 2;
+			binary[ctr - i] = n % 2;
 			n = n / 2;
-			ctr++;
-			i++;
 		}
-		for (j = i - 1; j >= 0; j--)
+		for (i = 0; i < ctr; i++)
 		{
-			c = binary[j] + '0';
-			write(1, &c, 1);
+			c = binary[i] + '0';
+			retval = write(1, &c, 1);
+
+			if (retval == -1)
+			{
+				free(binary);
+				return (-1);
+			}
 		}
 	}
+	free(binary);
 	return ctr;
 }
