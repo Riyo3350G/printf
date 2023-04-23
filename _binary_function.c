@@ -13,7 +13,7 @@ int print_bin(va_list l)
 	int ctr = 0, i = 0, retval;
 	char *binary;
 	
-	n = a;
+	a = n;
 	
 	while (a > 0)
 	{
