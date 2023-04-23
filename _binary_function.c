@@ -12,7 +12,7 @@ int print_bin(va_list l)
 	char c;
 	int ctr = 0, i = 0, j = 0, binary[32];
 
-	if (n == 0)
+	if (n < 1)
 	{
 		c = n + '0';
 		write(1, &c, 1);
