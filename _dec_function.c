@@ -10,7 +10,7 @@ int print_i(va_list l)
 {
 	int ctr = 0, n;
 	int a = va_arg(l, int);
-	int countn = 1;
+	unsigned int countn = 1;
 	unsigned int number;
 	char c;
 
@@ -41,5 +41,5 @@ int print_i(va_list l)
 		countn = countn / 10;
 	}
 
-	return ctr;
+	return (ctr);
 }
