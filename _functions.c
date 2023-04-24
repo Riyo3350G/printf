@@ -51,7 +51,7 @@ int print_s(va_list l)
  * Return: The length of the string
  */
 int print_rev(va_list l)
-{	
+{
 	int count_fun = 0, i = 0;
 	char *s = va_arg(l, char *);
 
