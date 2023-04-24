@@ -63,7 +63,7 @@ int print_rev(va_list l)
 	}
 	while (i >= 0)
 	{
-		count_fun += write(1, &str[j], 1);
+		count_fun += write(1, &s[i], 1);
 		i--;
 	}
 	count_fun--;
