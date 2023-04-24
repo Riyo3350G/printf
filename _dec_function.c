@@ -16,7 +16,7 @@ int print_i(va_list l)
 
     if (input < 0)
     {
-        i = '-';
+        c = '-';
         ctr += write(STDOUT_FILENO, &c, 1);
         number = (unsigned long) (-1 * input);
     }
@@ -43,18 +43,4 @@ int print_i(va_list l)
     }
 
     return (ctr);
-}
-
-/**
- * print_i - Prints an unsigned integer
- * @l: List of arguments
- *
- * Return: Number of digits printed
- */
-int print_u(va_list l)
-{
-	int ctr = 0;
-	unsigned int input = va_arg(l, unsigned int);
-
-
 }

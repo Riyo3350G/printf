@@ -16,12 +16,13 @@ int print_x(va_list l)
 	{
 		c = n + '0';
 		write(1, &c, 1);
+		return (1);
 	}
 	else
 	{
 		while (n > 0)
 		{
-			low_hex[i] = n % 16;																	
+			low_hex[i] = n % 16;
 			n = n / 16;
 			ctr++;
 			i++;
@@ -31,17 +32,15 @@ int print_x(va_list l)
 		{
 		      if(low_hex[j] > 9)
 		      {
-			c = 'a' + (low_hex[j] % 10);
+			      c = 'a' + (low_hex[j] % 10);
 		      }else{
-			c = low_hex[j] + '0';
+			      c = low_hex[j] + '0';
 		      }
-					write(1, &c, 1);																	
+		      write(1, &c, 1);
 		}
 		return (ctr);
 	}
 }
-
-#include "main.h"
 
 /**
  * print_X - Prints an unsigned int in hexadecimal upper format.
@@ -51,7 +50,7 @@ int print_x(va_list l)
  */
 int print_X(va_list l)
 {
-  unsigned int n = va_arg(l, unsigned int);
+	unsigned int n = va_arg(l, unsigned int);
 	char c;
 	int ctr = 0, i = 0, j = 0, up_hex[32];
 
@@ -59,12 +58,13 @@ int print_X(va_list l)
 	{
 		c = n + '0';
 		write(1, &c, 1);
+		return (1);
 	}
 	else
 	{
 		while (n > 0)
 		{
-			up_hex[i] = n % 16;																	
+			up_hex[i] = n % 16;
 			n = n / 16;
 			ctr++;
 			i++;
@@ -72,13 +72,13 @@ int print_X(va_list l)
 
 		for (j = i - 1; j >= 0; j--)
 		{
-      if(up_hex[j] > 9)
-      {
-        c = 'A' + (up_hex[j] % 10);
-      }else{
-			  c = up_hex[j] + '0';
-      }
-			write(1, &c, 1);																	
+      			if(up_hex[j] > 9)
+      			{
+				c = 'A' + (up_hex[j] % 10);
+			}else{
+				c = up_hex[j] + '0';
+			}
+			write(1, &c, 1);
 		}
 		return (ctr);
 	}

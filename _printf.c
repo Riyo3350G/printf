@@ -42,7 +42,14 @@ int _printf(const char *format, ...)
 				else if(format[i] == 'o')
 				{
 					counter += print_oct(l);
-				}else
+				}else if(format[i] == 'x')
+				{
+					counter += print_x(l);
+				}else if(format[i] == 'X')
+				{
+					counter += print_X(l);
+				}
+				else
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);

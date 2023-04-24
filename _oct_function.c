@@ -16,6 +16,7 @@ int print_oct(va_list l)
 	{
 		c = n + '0';
 		write(1, &c, 1);
+		return (1);
 	}
 	else
 	{
