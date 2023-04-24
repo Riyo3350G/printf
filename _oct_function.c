@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_bin - Prints an unsigned int in binary format.
+ * print_bin - Prints an unsigned int in octal format.
  * @l: List of arguments.
  *
  * Return: Number of binary digits printed.
