@@ -70,12 +70,10 @@ int print_X(va_list l)
 
 		for (j = i - 1; j >= 0; j--)
 		{
-			if(up_hex[j] > 9)
-			{
+			if (up_hex[j] > 9)
 				c = 'A' + (up_hex[j] % 10);
-			}else{
+			else
 				c = up_hex[j] + '0';
-			}
 			write(1, &c, 1);
 		}
 		return (ctr);
