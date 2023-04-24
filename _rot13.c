@@ -11,7 +11,7 @@ int print_rot13(va_list l)
 	char lower[] = "abcdefghijklmnopqrstuvwxyz";
 	int i, ctr = 0;
 	char *str = va_arg(l, char*);
-	
+
 	if (str == NULL)
 	{
 		str = "(null)";
