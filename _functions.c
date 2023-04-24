@@ -52,7 +52,7 @@ int print_s(va_list l)
 int print_rev(va_list l)
 {
         char *str = va_arg(l, char *);
-        int length = 0, j;
+        int length = 0, j, retVal;
 
         while (*str != '\0')
         {
