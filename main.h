@@ -15,4 +15,5 @@ int print_bin(va_list l);
 int print_oct(va_list l);
 int print_x(va_list l);
 int print_X(va_list l);
+int print_u(va_list l);
 #endif /* MAIN_H */
