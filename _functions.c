@@ -27,12 +27,6 @@ int print_s(va_list l)
 	
 	str = va_arg(l, char*);
 	
-	if (str == NULL)
-	{
-		str = "(null)";
-		return (6);
-	}
-	
 	while (*str != '\0')
 	{
 		write(STDOUT_FILENO, str, 1);
