@@ -8,22 +8,10 @@
  */
 int print_c(va_list l)
 {
-    char c = va_arg(l, int);
-
-    if (c == '\n')
-    {
-        write(STDOUT_FILENO, "\\n", 2);
-    }
-    else if (c == '\t')
-    {
-        write(STDOUT_FILENO, "\\t", 2);
-    }
-    else
-    {
-        write(STDOUT_FILENO, &c, 1);
-    }
-
-    return (1);
+	
+	char c = va_arg(l, int);
+	write(STDOUT_FILENO, &c, 1);
+	return (1);
 }
 
 /**
