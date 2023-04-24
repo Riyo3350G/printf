@@ -30,12 +30,10 @@ int print_x(va_list l)
 
 		for (j = i - 1; j >= 0; j--)
 		{
-			if(low_hex[j] > 9)
-			{
+			if (low_hex[j] > 9)
 				c = 'a' + (low_hex[j] % 10);
-			}else{
+			else
 				c = low_hex[j] + '0';
-			}
 			write(1, &c, 1);
 		}
 		return (ctr);
