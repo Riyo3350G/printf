@@ -5,7 +5,7 @@
  * @l: List of arguments.
  *
  * Return: Number of hexadecimal digits printed.
- */
+ **/
 int print_x(va_list l)
 {
 	unsigned int n = va_arg(l, unsigned int);
@@ -16,7 +16,7 @@ int print_x(va_list l)
 	{
 		c = n + '0';
 		write(1, &c, 1);
-		return (1)
+		return (1);
 	}
 	else
 	{
@@ -30,12 +30,10 @@ int print_x(va_list l)
 
 		for (j = i - 1; j >= 0; j--)
 		{
-			if (low_hex[j] > 9)
+			if(low_hex[j] > 9)
 			{
 				c = 'a' + (low_hex[j] % 10);
-			}
-			else
-			{
+			}else{
 				c = low_hex[j] + '0';
 			}
 			write(1, &c, 1);
@@ -49,7 +47,7 @@ int print_x(va_list l)
  * @l: List of arguments.
  *
  * Return: Number of hexadecimal digits printed.
- */
+ **/
 int print_X(va_list l)
 {
 	unsigned int n = va_arg(l, unsigned int);
@@ -74,12 +72,10 @@ int print_X(va_list l)
 
 		for (j = i - 1; j >= 0; j--)
 		{
-			if (up_hex[j] > 9)
+			if(up_hex[j] > 9)
 			{
 				c = 'A' + (up_hex[j] % 10);
-			}
-			else
-			{
+			}else{
 				c = up_hex[j] + '0';
 			}
 			write(1, &c, 1);
