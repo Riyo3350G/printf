@@ -22,7 +22,7 @@ int get_func(va_list l, char k, char c)
 		counter += print_i(l);
 	else if (c == '%')
 	{
-		write(1, '%', 1);
+		write(1, "%", 1);
 		counter++;
 	} else if (c == 'b')
 	{
