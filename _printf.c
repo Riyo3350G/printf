@@ -36,8 +36,13 @@ int _printf(const char *format, ...)
 					counter++;
 				}
 				else if (format[i] == 'b')
+				{
 					counter += print_bin(l);
-				else
+				}
+				else if(format[i] == 'o')
+				{
+					counter += print_oct(l);
+				}else
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
