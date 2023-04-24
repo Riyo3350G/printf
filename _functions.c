@@ -32,6 +32,9 @@ int print_s(va_list l)
 		str = "(null)";
 	}
 	
+	if (str[0] == '\0')
+		return (-1);
+	
 	while (*str != '\0')
 	{
 		write(STDOUT_FILENO, str, 1);
