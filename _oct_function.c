@@ -22,7 +22,7 @@ int print_oct(va_list l)
 	{
 		while (n > 0)
 		{
-			octal[i] = n % 8;																	
+			octal[i] = n % 8;
 			n = n / 8;
 			ctr++;
 			i++;
@@ -31,7 +31,7 @@ int print_oct(va_list l)
 		for (j = i - 1; j >= 0; j--)
 		{
 			c = octal[j] + '0';
-			write(1, &c, 1);																	
+			write(1, &c, 1);
 		}
 		return (ctr);
 	}
