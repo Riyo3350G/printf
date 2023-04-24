@@ -26,8 +26,7 @@ int print_rot13(va_list l)
 
 	while (*str != '\0')
 	{
-		if (*str >= 'A' && *str <= 'Z')
-		{
+		if (*str >= 'A' && *str <= 'Z') {
 			for (i = 0; i < 26; i++)
 			{
 				if (upper[i] == *str)
@@ -36,8 +35,7 @@ int print_rot13(va_list l)
 			if ((i + 13) > 26)
 				i = (i + 13) % 26;
 			write(1, &upper[i], 1);
-		} else if (*str >= 'a' && *str <= 'z')
-		{
+		} else if (*str >= 'a' && *str <= 'z') {
 			for (i = 0; i < 26; i++)
 				if (lower[i] == *str)
 					break;
