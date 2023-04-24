@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			else if (format[i])
 			{
 				counter += get_func(l, format[i - 1], format[i]);
-			} 
+			}
 		}
 		else
 		{
