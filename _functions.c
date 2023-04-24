@@ -52,20 +52,24 @@ int print_s(va_list l)
  */
 int print_rev(va_list l)
 {
-	int count_fun = 0, i = 0;
-	char *s = va_arg(l, char *);
+	char *str = va_arg(l, char *);
+	int length = 0, j, retVal;
+	
+	if (!str)
+		str = "(null)";
 
-	if (!s)
-		s = "(null)";
-	while (s[i])
+	while (*str != '\0')
 	{
-		i++;
+		length++;
+		str++;
 	}
-	while (i >= 0)
+
+	for (j = length - 1; j >= 0; j--)
 	{
-		count_fun += write(1, &s[i], 1);
-		i--;
+		retVal = write(1, &str[j], 1);
+		if (retVal == -1)
+			return (-1);
 	}
-	count_fun--;
-	return (count_fun);
+	
+	return (length);
 }
