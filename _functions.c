@@ -38,3 +38,29 @@ int print_s(va_list l)
 	}
 	return (ctr);
 }
+
+/**
+ * print_rev - Prints a string in reverse
+ * @l: Argument list containing the string to be printed
+ * 
+ * Return: The length of the string
+ */
+int print_rev(va_list l)
+{
+	char *str = va_arg(l, char*);
+	int length = 0, j;
+
+	while (*str != '\0')
+	{
+		length++;
+		str++;
+	}
+
+	for (j = length - 1; j >= 0; j--)
+	{
+		write(1, &str[j], 1);
+	}
+
+	return (length);
+}
+

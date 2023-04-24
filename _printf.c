@@ -51,6 +51,9 @@ int _printf(const char *format, ...)
 				}else if(format[i] == 'u')
 				{
 					counter += print_u(l);
+				}else if(format[i] == 'r')
+				{
+					counter += print_rev(l);
 				}
 				else
 				{
