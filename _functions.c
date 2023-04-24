@@ -51,25 +51,21 @@ int print_s(va_list l)
  * Return: The length of the string
  */
 int print_rev(va_list l)
-{
-	char *str = va_arg(l, char *);
-	int length = 0, j, retVal;
-	
-	if (!str)
-		str = "(null)";
+{	
+	int count_fun = 0, i = 0;
+	char *s = va_arg(args, char *);
 
-	while (*str != '\0')
+	if (!s)
+		s = "(null)";
+	while (s[i])
 	{
-		length++;
-		str++;
+		i++;
 	}
-
-	for (j = length - 1; j >= 0; j--)
+	while (i >= 0)
 	{
-		retVal = write(1, &str[j], 1);
-		if (retVal == -1)
-			return (-1);
+		count_fun += write(1, &str[j], 1);
+		i--;
 	}
-	
-	return (length);
+	count_fun--;
+	return (count_fun);
 }
