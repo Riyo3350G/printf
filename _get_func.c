@@ -42,9 +42,6 @@ int get_func(va_list l, char k, char c)
 	} else if (c == 'r')
 	{
 		counter += print_rev(l);
-	} else if (c == 'R')
-	{
-		counter += print_rot13(l);
 	} else
 	{
 		write(1, &k, 1);
