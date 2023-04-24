@@ -71,7 +71,5 @@ int print_rev(va_list l)
 			return (-1);
 	}
 	
-	length--;
-	
 	return (length);
 }
