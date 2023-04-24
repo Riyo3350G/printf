@@ -34,30 +34,28 @@ int _printf(const char *format, ...)
 				{
 					write(1, "%", 1);
 					counter++;
-				}
-				else if (format[i] == 'b')
+				} else if (format[i] == 'b')
 				{
 					counter += print_bin(l);
-				}
-				else if(format[i] == 'o')
+				} else if (format[i] == 'o')
 				{
 					counter += print_oct(l);
-				}else if(format[i] == 'x')
+				} else if (format[i] == 'x')
 				{
 					counter += print_x(l);
-				}else if(format[i] == 'X')
+				} else if (format[i] == 'X')
 				{
 					counter += print_X(l);
-				}else if(format[i] == 'u')
+				} else if (format[i] == 'u')
 				{
 					counter += print_u(l);
-				}else if(format[i] == 'r')
+				} else if (format[i] == 'r')
 				{
 					counter += print_rev(l);
-				}else if(format[i] == 'R')
+				} else if (format[i] == 'R')
 				{
 					counter += print_rot13(l);
-				}else
+				} else
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
