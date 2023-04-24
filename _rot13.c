@@ -26,18 +26,20 @@ int print_rot13(va_list l)
 		{
 			for (i = 0; i < 26; i++)
 			{
-				if (upper[i] == *str)	break;
+				if (upper[i] == *str)	
+					break;
 			}
-			i += 13;
-			if (i > 26)	i = i % 26;
+			if ((i + 13) > 26)
+				i = (i + 13) % 26;
 			write(1, &upper[i], 1);
 		}
 		else if (*str >= 'a' && *str <= 'z')
 		{
 			for (i = 0; i < 26; i++)
-				if (lower[i] == *str)	break;
-			i += 13;
-			if (i > 26)	i = i % 26;
+				if (lower[i] == *str)
+					break;
+			if ((i + 13) > 26)
+				i = (i + 13) % 26;
 			write(1, &lower[i], 1);
 		}
 		else
