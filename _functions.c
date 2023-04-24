@@ -70,6 +70,8 @@ int print_rev(va_list l)
 		if (retVal == -1)
 			return (-1);
 	}
-
+	
+	length--;
+	
 	return (length);
 }
