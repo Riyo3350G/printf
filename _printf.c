@@ -54,8 +54,10 @@ int _printf(const char *format, ...)
 				}else if(format[i] == 'r')
 				{
 					counter += print_rev(l);
-				}
-				else
+				}else if(format[i] == 'R')
+				{
+					counter += print_rot13(l);
+				}else
 				{
 					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);

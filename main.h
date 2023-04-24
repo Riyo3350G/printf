@@ -17,4 +17,5 @@ int print_x(va_list l);
 int print_X(va_list l);
 int print_u(va_list l);
 int print_rev(va_list l);
+int print_rot13(va_list l);
 #endif /* MAIN_H */
