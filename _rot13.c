@@ -15,7 +15,10 @@ int print_rot13(va_list l)
 	char *str = va_arg(l, char*);
 	
 	if(str == NULL)
+	{
+		str = "(null)";
 		return (-1);
+	}
 	
 	while (*str != '\0')
 	{
