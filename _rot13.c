@@ -46,8 +46,6 @@ int print_rot13(va_list l)
 				i = (i + 13) % 26;
 			write(1, &lower[i], 1);
 		}
-		else
-			write(1, str, 1);
 		ctr++;
 		str++;
 	}
