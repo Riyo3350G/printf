@@ -13,6 +13,10 @@ int print_rot13(va_list l)
 	int i, ctr = 0;
 
 	char *str = va_arg(l, char*);
+	
+	if(str == NULL)
+		return (-1);
+	
 	while (*str != '\0')
 	{
 		if (*str >= 'A' && *str <= 'Z')
