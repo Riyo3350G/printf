@@ -19,8 +19,7 @@ int print_i(va_list l)
         c = '-';
         ctr += write(STDOUT_FILENO, &c, 1);
         number = (unsigned long) (-1 * input);
-    }
-    else
+    } else
     {
         number = (unsigned long) input;
     }
