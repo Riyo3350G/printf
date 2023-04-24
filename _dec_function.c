@@ -18,10 +18,11 @@ int print_i(va_list l)
     {
         c = '-';
         ctr += write(STDOUT_FILENO, &c, 1);
-        number = (unsigned long) (-1 * input);
-    } else
+        number = (unsigned long)(-1 * input);
+    }
+    else
     {
-        number = (unsigned long) input;
+        number = (unsigned long)input;
     }
 
     input = number;
@@ -34,7 +35,7 @@ int print_i(va_list l)
 
     while (countn >= 1)
     {
-        n = (int) ((input / countn) % 10);
+        n = (int)((input / countn) % 10);
         c = n + '0';
         write(STDOUT_FILENO, &c, 1);
         countn /= 10;
@@ -68,7 +69,7 @@ int print_u(va_list l)
 
     while (countn >= 1)
     {
-        n = (unsigned int) ((input / countn) % 10);
+        n = (unsigned int)((input / countn) % 10);
         c = n + '0';
         write(STDOUT_FILENO, &c, 1);
         countn /= 10;
