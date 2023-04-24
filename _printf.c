@@ -24,45 +24,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i])
 			{
-				if (format[i] == 'c')
-					counter += print_c(l);
-				else if (format[i] == 's')
-					counter += print_s(l);
-				else if (format[i] == 'd' || format[i] == 'i')
-					counter += print_i(l);
-				else if (format[i] == '%')
-				{
-					write(1, "%", 1);
-					counter++;
-				}
-				else if (format[i] == 'b')
-				{
-					counter += print_bin(l);
-				}
-				else if(format[i] == 'o')
-				{
-					counter += print_oct(l);
-				}else if(format[i] == 'x')
-				{
-					counter += print_x(l);
-				}else if(format[i] == 'X')
-				{
-					counter += print_X(l);
-				}else if(format[i] == 'u')
-				{
-					counter += print_u(l);
-				}else if(format[i] == 'r')
-				{
-					counter += print_rev(l);
-				}else if(format[i] == 'R')
-				{
-					counter += print_rot13(l);
-				}else
-				{
-					write(1, &format[i - 1], 1);
-					write(1, &format[i], 1);
-					counter += 2;
-				}
+				counter += get_func(l,format[i-1],format[i]);
 			}
 		}
 		else
