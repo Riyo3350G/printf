@@ -22,14 +22,15 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i])
-			{
-				counter += get_func(l, format[i - 1], format[i]);
-			} else if (!format[i] || format[i + 1] == ' ')
+			if (!format[i] || format[i + 1] == ' ')
 			{
 				counter = -1;
 				break;
 			}
+			else if (format[i])
+			{
+				counter += get_func(l, format[i - 1], format[i]);
+			} 
 		}
 		else
 		{
