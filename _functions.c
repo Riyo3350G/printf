@@ -10,6 +10,7 @@ int print_c(va_list l)
 {
 	int retVal;
 	char c = va_arg(l, int);
+
 	retVal = write(STDOUT_FILENO, &c, 1);
 	return (retVal);
 }
