@@ -31,7 +31,7 @@ int print_s(va_list l)
 	if (str == NULL)
 	{
 		str = "(null)";
-		return (6);
+		return (0);
 	}
 
 	while (*str != '\0')
