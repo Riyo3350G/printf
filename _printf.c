@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 					counter += print_c(l);
 				else if (format[i] == 's')
 					counter += print_s(l);
-				else if (format[i] == 'd' || format[i] == 'i')
+				else if (format[i] == 'd' || format[i] == 'i' || format[i] == 'u')
 					counter += print_i(l);
 				else if (format[i] == '%')
 				{
