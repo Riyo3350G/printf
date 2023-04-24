@@ -63,9 +63,9 @@ int print_rev(va_list l)
 	for (j = length - 1; j >= 0; j--)
 	{
 		retVal = write(1, &str[j], 1);
-		if(retVal == -1)
+		if (retVal == -1)
 			return (-1);
 	}
-	
+
 	return (length);
 }
