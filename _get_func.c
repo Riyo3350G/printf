@@ -1,6 +1,15 @@
 #include "main.h"
 
-
+/**
+ * get_func - selects the appropriate function to perform
+ * conversion based on the format specifier
+ *
+ * @l: arguments list
+ * @k: character before format specifier
+ * @c: format specifier character
+ *
+ * Return: number of characters printed
+ */
 int get_func(va_list l, char k, char c)
 {
 	int counter = 0;
