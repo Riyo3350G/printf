@@ -6,7 +6,7 @@
  *
  * Return: the number of characters printed
  */
-int print_b(va_list l)
+int print_bin(va_list l)
 {
     unsigned int n = va_arg(l, unsigned int);
     unsigned int binary = 0, base = 1;
