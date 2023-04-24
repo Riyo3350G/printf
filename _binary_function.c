@@ -1,34 +1,36 @@
 #include "main.h"
 
 /**
- * print_b - prints an unsigned integers in binary
- * @l: the list of arguments
+ * print_bin - Prints an unsigned int in binary format.
+ * @l: List of arguments.
  *
- * Return: the number of characters printed
+ * Return: Number of binary digits printed.
  */
 int print_bin(va_list l)
 {
-    unsigned int n = va_arg(l, unsigned int);
-    unsigned int binary = 0, base = 1;
+	unsigned int n = va_arg(l, unsigned int);
+	char c;
+	int ctr = 0, i = 0, j = 0, binary[32];
 
-    while (n > 0)
-    {
-        binary += (n % 2) * base;
-        n /= 2;
-        base *= 10;
-    }
-
-    int len = 0;
-    char buffer[32]; // max length of unsigned int in binary is 32 bits
-
-    while (base > 1)
-    {
-        base /= 10;
-        buffer[len] = binary / base + '0';
-        binary %= base;
-        len++;
-    }
-
-    write(STDOUT_FILENO, buffer, len);
-    return (len);
+	if (n == 0)
+	{
+		c = n + '0';
+		write(1, &c, 1);
+	}
+	else
+	{
+		while (n > 0)
+		{
+			binary[i] = n % 2;
+			n = n / 2;
+			ctr++;
+			i++;
+		}
+		for (j = i - 1; j >= 0; j--)
+		{
+			c = binary[j] + '0';
+			write(1, &c, 1);
+		}
+	}
+	return (ctr);
 }
