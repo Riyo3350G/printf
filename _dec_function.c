@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -44,4 +43,15 @@ int print_i(va_list l)
     }
 
     return (ctr);
+}
+
+/**
+ * print_i - Prints an unsigned integer
+ * @l: List of arguments
+ *
+ * Return: Number of digits printed
+ */
+int print_u(va_list l)
+{
+
 }
