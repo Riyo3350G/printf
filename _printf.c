@@ -25,6 +25,10 @@ int _printf(const char *format, ...)
 			if (format[i])
 			{
 				counter += get_func(l, format[i - 1], format[i]);
+			} else 
+			{
+				counter = -1;
+				break;
 			}
 		}
 		else
