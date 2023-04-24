@@ -54,6 +54,9 @@ int print_rev(va_list l)
 {
 	char *str = va_arg(l, char *);
 	int length = 0, j, retVal;
+	
+	if (!str)
+		str = "(null)";
 
 	while (*str != '\0')
 	{
