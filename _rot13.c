@@ -21,13 +21,13 @@ int print_rot13(va_list l)
 		{
 			if (str[i] == alph[j])
 			{
-				count += write(1, rot13[j], 1);
+				count += write(1, &rot13[j], 1);
 				break;
 			}
 		}
 		if (!alph[j])
 		{
-			count += write(1, str[i], 1);
+			count += write(1, &str[i], 1);
 		}
 	}
 	return (count);
