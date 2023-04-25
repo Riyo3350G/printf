@@ -43,6 +43,12 @@ int print_p(va_list l)
 	void *p;
 	p = va_arg(l, void*);
 
+	if (p == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+
 	write(1, "0x", 2);
 	ctr += 2;
 
