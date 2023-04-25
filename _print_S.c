@@ -51,7 +51,7 @@ int print_S(va_list l)
 
 	while (str[i] != '\0')
 	{
-		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		if (str[i] < 32 || str[i] >= 127)
 		{
 			write(1, "\\x0", 3);
 			ctr += 3;
