@@ -53,8 +53,13 @@ int print_S(va_list l)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			write(1, "\\x0", 3);
-			ctr += 3;
+			write(1, "\\x", 2);
+			ctr += 2;
+			if (str[i] < 16)
+			{
+				write(1, '0', 1);
+				ctr++;
+			}
 			ctr += hexa(str[i]);
 		}
 		else
