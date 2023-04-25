@@ -44,7 +44,7 @@ int hexal(unsigned long int n)
 }
 
 /**
- * printf_p - prints an hexgecimal number.
+ * print_p - prints an hexgecimal number.
  * @l: The arguments.
  *
  * Return: The counter.
