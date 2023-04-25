@@ -17,7 +17,7 @@ int print_rot13(va_list l)
 	{
 		str = "(null)";
 	}
-	
+
 	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; alph[j]; j++)
