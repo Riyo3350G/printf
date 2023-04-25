@@ -41,6 +41,7 @@ int print_p(va_list l)
 {
 	int ctr = 0;
 	void *p;
+
 	p = va_arg(l, void*);
 
 	if (p == NULL)
