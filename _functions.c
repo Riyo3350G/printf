@@ -63,6 +63,8 @@ int print_rev(va_list l)
 		length++;
 		str++;
 	}
+	
+	str--;
 
 	for (j = length - 1; j >= 0; j--)
 	{
