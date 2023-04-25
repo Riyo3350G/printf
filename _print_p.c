@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * hexa - Prints a char in hexadecimal lower format.
+ * hexal - Prints a char in hexadecimal lower format.
  * @n: The argument char.
  *
  * Return: Number of hexadecimal digits printed.
@@ -9,13 +9,23 @@
 int hexal(unsigned long int n)
 {
 	char c;
-	int ctr = 0, i = 0, j, up_hex[64];
+	int ctr = 0, i = 0, j;
+	unsigned long int m = n;
+	int *up_hex = NULL;
+
+	do {
+		m /= 16;
+		ctr++;
+	} while (m > 0);
+
+	up_hex = malloc(sizeof(int) * ctr);
+	if (up_hex == NULL)
+		return (-1);
 
 	while (n > 0)
 	{
 		up_hex[i] = n % 16;
 		n = n / 16;
-		ctr++;
 		i++;
 	}
 
@@ -27,6 +37,8 @@ int hexal(unsigned long int n)
 			c = up_hex[j] + '0';
 		write(1, &c, 1);
 	}
+
+	free(up_hex);
 
 	return (ctr);
 }
