@@ -9,7 +9,7 @@
 int hexal(unsigned long int n)
 {
 	char c;
-	int ctr = 0, i = 0, j, up_hex[32];
+	int ctr = 0, i = 0, j, up_hex[64];
 
 	while (n > 0)
 	{
