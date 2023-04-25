@@ -48,7 +48,11 @@ int get_func(va_list l, char k, char c)
 	} else if (c == 'S')
 	{
 		counter += print_S(l);
-	} else
+	} else if (c == 'p')
+	{
+		counter += print_p(l);
+	}
+	else
 	{
 		write(1, &k, 1);
 		write(1, &c, 1);
