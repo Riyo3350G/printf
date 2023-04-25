@@ -58,13 +58,8 @@ int print_rev(va_list l)
 	if (!str)
 		str = "(null)";
 
-	while (*str != '\0')
-	{
+	while (str[length] != '\0')
 		length++;
-		str++;
-	}
-
-	str--;
 
 	for (j = length - 1; j >= 0; j--)
 	{
