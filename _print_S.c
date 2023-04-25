@@ -41,7 +41,7 @@ int hexa(char n)
 int print_S(va_list l)
 {
 	char *str = va_arg(l, char *);
-	int ctr = 0, i = 0;
+	int ctr = 0, i = 0, cas;
 
 	if (str == NULL)
 	{
@@ -55,11 +55,14 @@ int print_S(va_list l)
 		{
 			write(1, "\\x", 2);
 			ctr += 2;
-			if (str[i] < 16)
+			cas = str[i];
+
+			if (cas < 16)
 			{
-				write(1, '0', 1);
+				write(1, "0", 1);
 				ctr++;
 			}
+
 			ctr += hexa(str[i]);
 		}
 		else
