@@ -25,33 +25,23 @@ int get_func(va_list l, char k, char c)
 		write(1, "%", 1);
 		counter++;
 	} else if (c == 'b')
-	{
 		counter += print_bin(l);
-	} else if (c == 'o')
-	{
+	else if (c == 'o')
 		counter += print_oct(l);
-	} else if (c == 'x')
-	{
+	else if (c == 'x')
 		counter += print_x(l);
-	} else if (c == 'X')
-	{
+	else if (c == 'X')
 		counter += print_X(l);
-	} else if (c == 'u')
-	{
+	else if (c == 'u')
 		counter += print_u(l);
-	} else if (c == 'r')
-	{
+	else if (c == 'r')
 		counter += print_rev(l);
-	} else if (c == 'R')
-	{
+	else if (c == 'R')
 		counter += print_rot13(l);
-	} else if (c == 'S')
-	{
+	else if (c == 'S')
 		counter += print_S(l);
-	} else if (c == 'p')
-	{
+	else if (c == 'p')
 		counter += print_p(l);
-	}
 	else
 	{
 		write(1, &k, 1);
