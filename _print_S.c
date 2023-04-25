@@ -42,7 +42,7 @@ int print_S(va_list l)
 {
 	char *str = va_arg(l, char *);
 	int ctr = 0, i = 0;
-	
+
 	if (str == NULL)
 	{
 		write(1, "\\x00", 4);
