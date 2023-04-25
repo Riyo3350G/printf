@@ -7,6 +7,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#define BUFFER_SIZE 1024
+
 int _printf(const char *format, ...);
 int print_c(va_list l);
 int print_s(va_list l);
@@ -18,5 +20,6 @@ int print_X(va_list l);
 int print_u(va_list l);
 int print_rev(va_list l);
 int print_rot13(va_list l);
+int print_S(va_list l);
 int get_func(va_list l, char k, char c);
 #endif /* MAIN_H */

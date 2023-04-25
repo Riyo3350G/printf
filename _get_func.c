@@ -45,6 +45,9 @@ int get_func(va_list l, char k, char c)
 	} else if (c == 'R')
 	{
 		counter += print_rot13(l);
+	} else if (c == 'S')
+	{
+		counter += print_S(l);
 	} else
 	{
 		write(1, &k, 1);
